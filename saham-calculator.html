@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-/* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --bg: #f0ede8;
@@ -71,319 +71,84 @@
   --shadow: 0 2px 20px rgba(0,0,0,0.4);
   --shadow-sm: 0 1px 8px rgba(0,0,0,0.3);
 }
-
 html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  line-height: 1.6;
-  transition: background var(--transition), color var(--transition);
-}
-
-/* ===== LAYOUT ===== */
+body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6; transition: background var(--transition), color var(--transition); }
 .wrapper { max-width: 520px; margin: 0 auto; padding: 0 1rem 3rem; }
-
-/* ===== HEADER ===== */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin-bottom: 0.5rem;
-}
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; margin-bottom: 0.5rem; }
 .logo { display: flex; align-items: center; gap: 8px; }
-.logo-icon {
-  width: 32px; height: 32px;
-  background: var(--text);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.logo-icon { width: 32px; height: 32px; background: var(--text); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .logo-icon svg { width: 18px; height: 18px; }
 .logo-name { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
 .topbar-actions { display: flex; gap: 8px; align-items: center; }
-
-.btn-icon {
-  width: 36px; height: 36px;
-  border: 1px solid var(--border2);
-  background: var(--surface);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition);
-}
+.btn-icon { width: 36px; height: 36px; border: 1px solid var(--border2); background: var(--surface); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--transition), border-color var(--transition); }
 .btn-icon:hover { background: var(--surface2); }
 .btn-icon svg { width: 16px; height: 16px; color: var(--text2); }
-
-/* ===== NAV TABS (main feature switch) ===== */
-.main-nav {
-  display: flex;
-  gap: 4px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 4px;
-  margin-bottom: 1.25rem;
-}
-.main-nav-btn {
-  flex: 1;
-  padding: 9px 8px;
-  font-size: 12.5px;
-  font-weight: 600;
-  font-family: var(--font);
-  border: none;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--text3);
-  cursor: pointer;
-  text-align: center;
-  line-height: 1.3;
-  transition: all var(--transition);
-  letter-spacing: -0.01em;
-}
+.main-nav { display: flex; gap: 4px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px; margin-bottom: 1.25rem; }
+.main-nav-btn { flex: 1; padding: 9px 8px; font-size: 12.5px; font-weight: 600; font-family: var(--font); border: none; border-radius: 6px; background: transparent; color: var(--text3); cursor: pointer; text-align: center; line-height: 1.3; transition: all var(--transition); letter-spacing: -0.01em; }
 .main-nav-btn:hover { color: var(--text2); background: var(--surface); }
-.main-nav-btn.active {
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: var(--shadow-sm);
-}
-
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  padding: 1.25rem 0 1.75rem;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-pill);
-  padding: 4px 14px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text2);
-  margin-bottom: 1rem;
-}
+.main-nav-btn.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
+.hero { text-align: center; padding: 1.25rem 0 1.75rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-pill); padding: 4px 14px; font-size: 12px; font-weight: 500; color: var(--text2); margin-bottom: 1rem; }
 .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
-.hero h1 {
-  font-size: clamp(22px, 6vw, 28px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--text);
-  line-height: 1.2;
-  margin-bottom: 0.65rem;
-}
+.hero h1 { font-size: clamp(22px, 6vw, 28px); font-weight: 700; letter-spacing: -0.03em; color: var(--text); line-height: 1.2; margin-bottom: 0.65rem; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero p { font-size: 14px; color: var(--text2); max-width: 340px; margin: 0 auto; line-height: 1.65; }
-
-/* ARA hero accent */
 .hero.ara h1 em { color: var(--purple); }
 .hero.ara .hero-badge span { background: var(--purple); }
-
-/* ===== CARDS ===== */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  margin-bottom: 0.875rem;
-  box-shadow: var(--shadow-sm);
-  transition: background var(--transition), border-color var(--transition);
-}
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-.card-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--text3);
-}
-
-/* ===== FIELDS ===== */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 0.875rem; box-shadow: var(--shadow-sm); transition: background var(--transition), border-color var(--transition); }
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); }
 .field { margin-bottom: 0.875rem; }
 .field:last-child { margin-bottom: 0; }
-.field label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--text2);
-  margin-bottom: 5px;
-}
-.field input, .field select {
-  width: 100%;
-  padding: 10px 13px;
-  font-size: 15px;
-  font-family: var(--font);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  background: var(--bg2);
-  color: var(--text);
-  outline: none;
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
-  -webkit-appearance: none;
-}
+.field label { display: block; font-size: 12.5px; font-weight: 500; color: var(--text2); margin-bottom: 5px; }
+.field input, .field select { width: 100%; padding: 10px 13px; font-size: 15px; font-family: var(--font); border: 1px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg2); color: var(--text); outline: none; transition: border-color var(--transition), background var(--transition), box-shadow var(--transition); -webkit-appearance: none; }
 .field input::placeholder { color: var(--text3); font-size: 14px; }
-.field input:focus {
-  border-color: var(--accent);
-  background: var(--surface);
-  box-shadow: 0 0 0 3px rgba(29,110,82,0.12);
-}
-.ara-mode .field input:focus {
-  border-color: var(--purple);
-  box-shadow: 0 0 0 3px rgba(107,63,160,0.12);
-}
-.dark .field input:focus { box-shadow: 0 0 0 3px rgba(42,184,122,0.15); }
+.field input:focus { border-color: var(--purple); background: var(--surface); box-shadow: 0 0 0 3px rgba(107,63,160,0.12); }
 .field-hint { font-size: 11px; color: var(--text3); margin-top: 4px; font-family: var(--mono); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-
-/* ===== PRESET BUTTONS ===== */
 .preset-group { margin-bottom: 0.875rem; }
 .preset-group-label { font-size: 12px; color: var(--text3); margin-bottom: 6px; }
 .preset-row { display: flex; gap: 6px; }
-.preset-btn {
-  flex: 1;
-  padding: 7px 6px;
-  font-size: 12.5px;
-  font-weight: 500;
-  font-family: var(--font);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  background: var(--bg2);
-  color: var(--text2);
-  cursor: pointer;
-  transition: all var(--transition);
-  white-space: nowrap;
-}
+.preset-btn { flex: 1; padding: 7px 6px; font-size: 12.5px; font-weight: 500; font-family: var(--font); border: 1px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg2); color: var(--text2); cursor: pointer; transition: all var(--transition); white-space: nowrap; }
 .preset-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
 .preset-btn.active { border-color: var(--accent); color: var(--accent-text); background: var(--accent-bg); font-weight: 600; }
-.preset-btn.active-purple { border-color: var(--purple); color: var(--purple-text); background: var(--purple-bg); font-weight: 600; }
-
-/* ===== SCENARIO TABS ===== */
 .scenario-row { display: flex; gap: 6px; margin-bottom: 1rem; }
-.tab-btn {
-  flex: 1;
-  padding: 10px 8px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: var(--font);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  background: var(--bg2);
-  color: var(--text2);
-  cursor: pointer;
-  text-align: center;
-  line-height: 1.35;
-  transition: all var(--transition);
-}
+.tab-btn { flex: 1; padding: 10px 8px; font-size: 13px; font-weight: 500; font-family: var(--font); border: 1px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg2); color: var(--text2); cursor: pointer; text-align: center; line-height: 1.35; transition: all var(--transition); }
 .tab-btn:hover { background: var(--surface2); }
 .tab-btn.active-jual { border-color: var(--red); color: var(--red-text); background: var(--red-bg); font-weight: 600; }
 .tab-btn.active-avg { border-color: var(--accent); color: var(--accent-text); background: var(--accent-bg); font-weight: 600; }
 .tab-btn.active-hold { border-color: var(--amber); color: var(--amber-text); background: var(--amber-bg); font-weight: 600; }
-
-/* ===== CTA ===== */
 .cta-group { display: flex; gap: 8px; margin: 1.25rem 0; }
-.btn-simulate {
-  flex: 3;
-  padding: 13px 20px;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: var(--font);
-  background: var(--text);
-  color: var(--bg);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  letter-spacing: -0.01em;
-  transition: opacity var(--transition), transform var(--transition);
-}
+.btn-simulate { flex: 3; padding: 13px 20px; font-size: 15px; font-weight: 600; font-family: var(--font); background: var(--text); color: var(--bg); border: none; border-radius: var(--radius-sm); cursor: pointer; letter-spacing: -0.01em; transition: opacity var(--transition), transform var(--transition); }
 .btn-simulate:hover { opacity: 0.86; }
 .btn-simulate:active { transform: scale(0.98); }
 .btn-simulate.purple { background: var(--purple); color: #fff; }
-.btn-reset {
-  flex: 1;
-  padding: 13px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: var(--font);
-  background: transparent;
-  color: var(--text2);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: background var(--transition), color var(--transition);
-}
+.btn-reset { flex: 1; padding: 13px 16px; font-size: 14px; font-weight: 500; font-family: var(--font); background: transparent; color: var(--text2); border: 1px solid var(--border2); border-radius: var(--radius-sm); cursor: pointer; transition: background var(--transition), color var(--transition); }
 .btn-reset:hover { background: var(--surface2); color: var(--text); }
-
-/* ===== RESULTS ===== */
 .results-section { display: none; animation: slideUp 0.35s cubic-bezier(0.4,0,0.2,1); }
 .results-section.show { display: block; }
 @keyframes slideUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-
-.result-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  margin-bottom: 0.875rem;
-  box-shadow: var(--shadow);
-}
-.result-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+.result-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 0.875rem; box-shadow: var(--shadow); }
+.result-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
 .result-title { font-size: 14px; font-weight: 600; color: var(--text); }
-.result-pill {
-  font-size: 11.5px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  letter-spacing: 0.02em;
-}
+.result-pill { font-size: 11.5px; font-weight: 600; padding: 4px 12px; border-radius: var(--radius-pill); letter-spacing: 0.02em; }
 .pill-jual { background: var(--red-bg); color: var(--red-text); }
 .pill-avg { background: var(--accent-bg); color: var(--accent-text); }
 .pill-hold { background: var(--amber-bg); color: var(--amber-text); }
 .pill-ara { background: var(--accent-bg); color: var(--accent-text); }
 .pill-arb { background: var(--red-bg); color: var(--red-text); }
 .pill-ipo { background: var(--purple-bg); color: var(--purple-text); }
-
-/* ===== METRICS GRID ===== */
 .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
-.metric-card {
-  background: var(--surface2);
-  border-radius: var(--radius-sm);
-  padding: 12px 13px;
-  border: 1px solid var(--border);
-}
+.metric-card { background: var(--surface2); border-radius: var(--radius-sm); padding: 12px 13px; border: 1px solid var(--border); }
 .metric-label { font-size: 11px; color: var(--text3); font-weight: 500; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
-.metric-value {
-  font-size: 17px;
-  font-weight: 700;
-  font-family: var(--mono);
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
+.metric-value { font-size: 17px; font-weight: 700; font-family: var(--mono); color: var(--text); letter-spacing: -0.02em; }
 .metric-value.positive { color: var(--accent); }
 .metric-value.negative { color: var(--red); }
 .metric-value.neutral { color: var(--amber); }
 .metric-value.purple { color: var(--purple); }
 .metric-sub { font-size: 11px; color: var(--text3); margin-top: 3px; font-family: var(--mono); }
-
-/* ===== DIVIDER ===== */
 .divider { height: 1px; background: var(--border); margin: 1rem 0; }
-
-/* ===== VIS BARS ===== */
 .vis-title { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
 .vis-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .vis-row:last-child { margin-bottom: 0; }
@@ -391,54 +156,18 @@ body {
 .vis-track { flex: 1; height: 18px; background: var(--bg2); border-radius: 4px; overflow: hidden; }
 .vis-fill { height: 100%; border-radius: 4px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); min-width: 4px; }
 .vis-amount { font-size: 11.5px; color: var(--text2); width: 96px; text-align: right; flex-shrink: 0; font-family: var(--mono); font-weight: 500; }
-
-/* ===== ARA TABLE ===== */
-.ara-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-.ara-table th {
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text3);
-  padding: 6px 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border2);
-}
+.ara-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 4px; }
+.ara-table th { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border2); }
 .ara-table th:not(:first-child) { text-align: right; }
-.ara-table td {
-  padding: 9px 10px;
-  border-bottom: 1px solid var(--border);
-  font-family: var(--mono);
-  font-size: 12.5px;
-  color: var(--text2);
-  vertical-align: middle;
-}
+.ara-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 12.5px; color: var(--text2); vertical-align: middle; }
 .ara-table td:not(:first-child) { text-align: right; }
 .ara-table tr:last-child td { border-bottom: none; }
 .ara-table tr.highlight-row td { background: var(--surface2); }
 .ara-table .day-col { font-weight: 600; color: var(--text); font-family: var(--font); font-size: 12px; }
 .ara-table .up-val { color: var(--accent); font-weight: 600; }
 .ara-table .down-val { color: var(--red); font-weight: 600; }
-.ara-table .cur-row td { background: var(--purple-bg); }
-.ara-table .cur-row td:first-child { color: var(--purple); font-weight: 700; }
-
-/* ===== BATAS PRICE BADGE ===== */
-.price-badge-row {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 1rem;
-}
-.price-badge {
-  flex: 1;
-  border-radius: var(--radius-sm);
-  padding: 12px 13px;
-  text-align: center;
-}
+.price-badge-row { display: flex; gap: 8px; margin-bottom: 1rem; }
+.price-badge { flex: 1; border-radius: var(--radius-sm); padding: 12px 13px; text-align: center; }
 .price-badge .pb-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 5px; }
 .price-badge .pb-val { font-size: 20px; font-weight: 700; font-family: var(--mono); letter-spacing: -0.02em; }
 .price-badge .pb-pct { font-size: 11px; margin-top: 3px; font-family: var(--mono); }
@@ -451,112 +180,48 @@ body {
 .badge-cur { background: var(--purple-bg); border: 1px solid rgba(107,63,160,0.2); }
 .badge-cur .pb-label, .badge-cur .pb-pct { color: var(--purple-text); }
 .badge-cur .pb-val { color: var(--purple); }
-
-/* ===== ARA TIER SELECTOR ===== */
-.tier-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 0.875rem;
-}
-.tier-btn {
-  padding: 9px 6px;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: var(--font);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  background: var(--bg2);
-  color: var(--text2);
-  cursor: pointer;
-  text-align: center;
-  line-height: 1.4;
-  transition: all var(--transition);
-}
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 0.875rem; }
+.tier-btn { padding: 9px 6px; font-size: 12px; font-weight: 500; font-family: var(--font); border: 1px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg2); color: var(--text2); cursor: pointer; text-align: center; line-height: 1.4; transition: all var(--transition); }
 .tier-btn:hover { border-color: var(--purple); color: var(--purple-text); background: var(--purple-bg); }
 .tier-btn.active { border-color: var(--purple); color: var(--purple-text); background: var(--purple-bg); font-weight: 600; }
 .tier-btn .tier-range { font-size: 10px; color: var(--text3); display: block; margin-bottom: 1px; font-family: var(--mono); }
 .tier-btn.active .tier-range { color: var(--purple-text); opacity: 0.7; }
 .tier-btn .tier-pct { font-size: 14px; font-weight: 700; font-family: var(--mono); color: var(--text); }
 .tier-btn.active .tier-pct { color: var(--purple); }
-
-/* ===== INFO BOX ===== */
-.info-box {
-  background: var(--purple-bg);
-  border: 1px solid rgba(107,63,160,0.18);
-  border-radius: var(--radius-sm);
-  padding: 10px 13px;
-  font-size: 12.5px;
-  color: var(--purple-text);
-  line-height: 1.55;
-  margin-bottom: 0.875rem;
-}
-
-/* ===== INSIGHT BOX ===== */
-.insight {
-  background: var(--bg2);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 10px 13px;
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.55;
-  margin-top: 1rem;
-}
+.info-box { background: var(--purple-bg); border: 1px solid rgba(107,63,160,0.18); border-radius: var(--radius-sm); padding: 10px 13px; font-size: 12.5px; color: var(--purple-text); line-height: 1.55; margin-bottom: 0.875rem; }
+.insight { background: var(--bg2); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 13px; font-size: 13px; color: var(--text2); line-height: 1.55; margin-top: 1rem; }
 .insight.red { border-left-color: var(--red); }
 .insight.amber { border-left-color: var(--amber); }
 .insight.purple { border-left-color: var(--purple); }
-
-/* ===== FOOTER TIP ===== */
-.footer-tip {
-  text-align: center;
-  font-size: 12.5px;
-  color: var(--text3);
-  padding: 1rem 0 0.5rem;
-  line-height: 1.6;
-}
+.footer-tip { text-align: center; font-size: 12.5px; color: var(--text3); padding: 1rem 0 0.5rem; line-height: 1.6; }
 .footer-tip strong { color: var(--text2); font-weight: 500; }
-
-/* ===== DARK TOGGLE ===== */
 .toggle-icon { transition: transform 0.3s ease; }
 .dark .toggle-icon { transform: rotate(180deg); }
-
-/* ===== FORM SECTION TOGGLE ===== */
 .form-extra { display: none; }
 .form-extra.show { display: block; }
-
-/* ===== BADGE INDICATORS ===== */
-.unrealized-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-}
-
-/* ===== PAGE SECTIONS ===== */
+.unrealized-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: var(--radius-pill); }
 .page { display: none; }
 .page.active { display: block; }
-
-/* ===== CUSTOM RULE NOTE ===== */
-.rule-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--amber-bg);
-  border: 1px solid rgba(154,96,0,0.18);
-  border-radius: var(--radius-sm);
-  padding: 9px 12px;
-  font-size: 12px;
-  color: var(--amber-text);
-  margin-bottom: 0.875rem;
-  line-height: 1.5;
-}
+.rule-note { display: flex; align-items: center; gap: 8px; background: var(--amber-bg); border: 1px solid rgba(154,96,0,0.18); border-radius: var(--radius-sm); padding: 9px 12px; font-size: 12px; color: var(--amber-text); margin-bottom: 0.875rem; line-height: 1.5; }
 .rule-note svg { flex-shrink: 0; width: 14px; height: 14px; }
 
-/* ===== RESPONSIVE ===== */
+/* NEW: Lot profit section */
+.lot-section { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 13px; margin-top: 0.875rem; }
+.lot-section-title { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--purple-text); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.lot-section-title::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--purple); border-radius: 50%; }
+.lot-profit-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.lot-profit-table th { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border2); }
+.lot-profit-table th:not(:first-child) { text-align: right; }
+.lot-profit-table td { padding: 8px 8px; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 12px; color: var(--text2); vertical-align: middle; }
+.lot-profit-table td:not(:first-child) { text-align: right; }
+.lot-profit-table tr:last-child td { border-bottom: none; }
+.lot-profit-table tr.highlight-row td { background: var(--bg2); }
+.lot-profit-table .day-label { font-family: var(--font); font-size: 11.5px; font-weight: 600; color: var(--text); }
+.lot-profit-table .profit-pos { color: var(--accent); font-weight: 600; }
+.lot-profit-table .profit-neg { color: var(--red); font-weight: 600; }
+.lot-profit-table .price-up { color: var(--accent); }
+.lot-profit-table .price-down { color: var(--red); }
+
 @media (max-width: 380px) {
   .grid-2 { grid-template-columns: 1fr; }
   .metrics-grid { grid-template-columns: 1fr; }
@@ -569,7 +234,6 @@ body {
 <body>
 <div class="wrapper">
 
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="logo">
       <div class="logo-icon">
@@ -590,24 +254,18 @@ body {
     </div>
   </div>
 
-  <!-- MAIN NAV -->
   <div class="main-nav">
     <button class="main-nav-btn active" id="nav-simulator" onclick="switchPage('simulator')">📊 Simulator</button>
     <button class="main-nav-btn" id="nav-ara" onclick="switchPage('ara')">🚀 ARA / ARB</button>
   </div>
 
-  <!-- ============================================================ -->
   <!-- PAGE: SIMULATOR -->
-  <!-- ============================================================ -->
   <div class="page active" id="page-simulator">
-
     <div class="hero">
       <div class="hero-badge"><span></span>Simulasi Saham Gratis</div>
       <h1>Beli, Jual, atau Tahan?<br><em>Simulasi dulu.</em></h1>
       <p>Tidak yakin harus jual atau tahan? Masukkan data sahammu dan lihat dampaknya sebelum eksekusi.</p>
     </div>
-
-    <!-- INPUT CARD -->
     <div class="card">
       <div class="card-header"><span class="card-label">Data Saham Kamu</span></div>
       <div class="field">
@@ -633,8 +291,6 @@ body {
         <span class="unrealized-badge" id="unrealized-badge">—</span>
       </div>
     </div>
-
-    <!-- SCENARIO CARD -->
     <div class="card">
       <div class="card-header"><span class="card-label">Pilih Aksi</span></div>
       <div class="scenario-row">
@@ -643,8 +299,6 @@ body {
         <button class="tab-btn" id="tab-average" onclick="setTab('average')">Average<br>Down</button>
         <button class="tab-btn" id="tab-hold" onclick="setTab('hold')">Tahan<br>Dulu</button>
       </div>
-
-      <!-- Jual Sebagian -->
       <div id="form-jual-sebagian" class="form-extra show">
         <div class="field">
           <label>Berapa lot yang ingin dijual?</label>
@@ -660,15 +314,11 @@ body {
           </div>
         </div>
       </div>
-
-      <!-- Jual Semua -->
       <div id="form-jual-semua" class="form-extra" style="padding:8px 0 4px">
         <div style="font-size:13px;color:var(--text2);background:var(--red-bg);border:1px solid rgba(194,59,34,0.15);border-radius:var(--radius-sm);padding:10px 13px;line-height:1.5;">
           Kamu akan menjual <strong>seluruh</strong> posisi. Simulasi akan menghitung total profit/loss yang direalisasikan.
         </div>
       </div>
-
-      <!-- Average Down -->
       <div id="form-average" class="form-extra">
         <div style="background:var(--accent-bg);border:1px solid rgba(29,110,82,0.18);border-radius:var(--radius-sm);padding:10px 13px;margin-bottom:12px;font-size:13px;color:var(--accent-text);line-height:1.55;">
           Isi 2 data di bawah ini — sisanya dihitung otomatis.
@@ -696,40 +346,23 @@ body {
         <div id="avg-preview" style="display:none;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:12px 13px;margin-top:4px;">
           <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;">Preview Hasil Average Down</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <div>
-              <div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Average baru</div>
-              <div id="prev-avg-baru" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--accent);">—</div>
-            </div>
-            <div>
-              <div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Turun dari avg lama</div>
-              <div id="prev-turun" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--accent);">—</div>
-            </div>
-            <div>
-              <div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Total lot setelah</div>
-              <div id="prev-total-lot" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--text);">—</div>
-            </div>
-            <div>
-              <div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Modal tambahan</div>
-              <div id="prev-modal-tambahan" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--text);">—</div>
-            </div>
+            <div><div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Average baru</div><div id="prev-avg-baru" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--accent);">—</div></div>
+            <div><div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Turun dari avg lama</div><div id="prev-turun" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--accent);">—</div></div>
+            <div><div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Total lot setelah</div><div id="prev-total-lot" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--text);">—</div></div>
+            <div><div style="font-size:11px;color:var(--text3);margin-bottom:3px;">Modal tambahan</div><div id="prev-modal-tambahan" style="font-size:16px;font-weight:700;font-family:var(--mono);color:var(--text);">—</div></div>
           </div>
         </div>
       </div>
-
-      <!-- Hold -->
       <div id="form-hold" class="form-extra">
         <div style="font-size:13px;color:var(--text2);background:var(--amber-bg);border:1px solid rgba(154,96,0,0.15);border-radius:var(--radius-sm);padding:10px 13px;line-height:1.5;">
           Pilih <strong>Tahan Dulu</strong> untuk melihat kondisi posisimu saat ini — nilai porto, unrealized P/L, dan harga break even.
         </div>
       </div>
     </div>
-
     <div class="cta-group">
       <button class="btn-simulate" onclick="simulate()">Simulasikan</button>
       <button class="btn-reset" onclick="resetAll()">Reset</button>
     </div>
-
-    <!-- RESULTS -->
     <div class="results-section" id="results">
       <div class="result-card">
         <div class="result-top">
@@ -745,28 +378,21 @@ body {
         <div class="insight" id="result-insight"></div>
       </div>
     </div>
+  </div>
 
-  </div><!-- end page-simulator -->
-
-  <!-- ============================================================ -->
-  <!-- PAGE: ARA / ARB CALCULATOR -->
-  <!-- ============================================================ -->
+  <!-- PAGE: ARA / ARB -->
   <div class="page" id="page-ara">
-
     <div class="hero ara">
       <div class="hero-badge"><span></span>Kalkulator BEI</div>
       <h1>ARA / ARB &amp;<br><em>Forecast IPO</em></h1>
       <p>Hitung batas atas-bawah harga saham per hari. Cocok untuk forecast target harga IPO, saham gorengan, atau saham baru listing.</p>
     </div>
 
-    <!-- ARA RULES INFO -->
     <div class="card">
       <div class="card-header"><span class="card-label">Pilih Kelompok Saham</span></div>
-
       <div class="info-box">
         BEI membagi saham ke dalam 3 kelompok berdasarkan harga. Pilih sesuai harga saham yang ingin kamu hitung, atau gunakan mode <strong>Otomatis</strong>.
       </div>
-
       <div class="tier-grid" id="tier-grid">
         <button class="tier-btn" id="tier-auto" onclick="setTier('auto', this)">
           <span class="tier-range">Otomatis</span>
@@ -793,8 +419,6 @@ body {
           <span class="tier-pct">✎</span>
         </button>
       </div>
-
-      <!-- Custom % input -->
       <div id="custom-pct-wrap" class="form-extra">
         <div class="field">
           <label>Persentase ARA kustom (%)</label>
@@ -802,22 +426,18 @@ body {
           <div class="field-hint">ARB akan sama dengan nilai ini (simetris)</div>
         </div>
       </div>
-
       <div class="rule-note">
         <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M7 6v4M7 4.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         Hari pertama IPO tidak memiliki batas ARA (bisa naik tak terbatas), tapi ARB tetap berlaku. Gunakan mode <strong>IPO (Hari 1)</strong> untuk skenario ini.
       </div>
     </div>
 
-    <!-- INPUT CARD ARA -->
     <div class="card">
       <div class="card-header"><span class="card-label">Data Harga</span></div>
-
       <div class="field">
         <label>Nama saham <span style="color:var(--text3);font-weight:400">(opsional)</span></label>
         <input type="text" id="ara_nama" placeholder="Contoh: AMMN, GOTO, BREN (IPO)" autocomplete="off" />
       </div>
-
       <div class="grid-2">
         <div class="field">
           <label>Harga acuan / IPO (Rp)</label>
@@ -831,7 +451,28 @@ body {
         </div>
       </div>
 
-      <!-- Mode IPO extra: lot & target -->
+      <!-- NEW: Lot fields for non-IPO -->
+      <div id="lot-fields-wrap" class="form-extra show">
+        <div class="divider" style="margin:0.5rem 0 0.875rem;"></div>
+        <div style="font-size:12px;font-weight:600;color:var(--purple-text);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Hitung Potensi Profit / Loss</div>
+        <div class="grid-2">
+          <div class="field">
+            <label>Harga beli kamu (Rp)</label>
+            <input type="number" id="ara_harga_beli" placeholder="900" min="1" />
+            <div class="field-hint">Harga rata-rata belimu</div>
+          </div>
+          <div class="field">
+            <label>Jumlah lot kamu</label>
+            <input type="number" id="ara_lot" placeholder="10" min="1" />
+            <div class="field-hint">1 lot = 100 lembar</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text3);background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;line-height:1.5;">
+          Opsional. Isi untuk melihat estimasi profit/loss di setiap level ARA &amp; ARB.
+        </div>
+      </div>
+
+      <!-- IPO extra fields -->
       <div id="ipo-extra" class="form-extra">
         <div class="divider" style="margin:0.5rem 0 0.875rem;"></div>
         <div style="font-size:12px;font-weight:600;color:var(--purple-text);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Mode IPO — Hitung Potensi Keuntungan</div>
@@ -860,27 +501,18 @@ body {
       <button class="btn-reset" onclick="resetARA()">Reset</button>
     </div>
 
-    <!-- ARA RESULTS -->
     <div class="results-section" id="ara-results">
-
-      <!-- Price badge row -->
       <div class="result-card">
         <div class="result-top">
           <div class="result-title" id="ara-result-title">Proyeksi Harga</div>
           <span class="result-pill" id="ara-result-pill">—</span>
         </div>
-
         <div class="price-badge-row" id="ara-badge-row"></div>
-
         <div class="divider"></div>
-
-        <!-- IPO Profit metrics (hidden by default) -->
         <div id="ipo-metrics-wrap" style="display:none">
           <div class="metrics-grid" id="ipo-metrics"></div>
           <div class="divider"></div>
         </div>
-
-        <!-- Table -->
         <div>
           <div class="vis-title">Proyeksi Per Hari</div>
           <div style="overflow-x:auto;margin:0 -4px;">
@@ -888,23 +520,30 @@ body {
           </div>
         </div>
 
+        <!-- NEW: Lot profit/loss table -->
+        <div id="lot-profit-section" style="display:none">
+          <div class="divider"></div>
+          <div class="lot-section">
+            <div class="lot-section-title">Estimasi Profit / Loss per Hari</div>
+            <div style="overflow-x:auto;">
+              <table class="lot-profit-table" id="lot-profit-table"></table>
+            </div>
+            <div style="font-size:11px;color:var(--text3);margin-top:10px;font-family:var(--mono);">* Belum termasuk biaya broker &amp; pajak. Sesuaikan dengan komisi brokermu.</div>
+          </div>
+        </div>
+
         <div class="insight purple" id="ara-insight"></div>
       </div>
+    </div>
+  </div>
 
-    </div><!-- end ara-results -->
-
-  </div><!-- end page-ara -->
-
-  <!-- FOOTER -->
   <div class="footer-tip">
     <strong>Keputusan lebih baik dimulai dari angka yang jelas.</strong><br>
     Gunakan simulasi ini sebelum klik Buy/Sell di aplikasi broker.
   </div>
-
-</div><!-- end wrapper -->
+</div>
 
 <script>
-// ===== DARK MODE =====
 const darkKey = 'tradesim-dark';
 function initDark() {
   const saved = localStorage.getItem(darkKey);
@@ -917,7 +556,6 @@ function toggleDark() {
 }
 initDark();
 
-// ===== PAGE SWITCH =====
 function switchPage(page) {
   ['simulator','ara'].forEach(p => {
     document.getElementById('page-' + p).classList.toggle('active', p === page);
@@ -926,7 +564,6 @@ function switchPage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== SIMULATOR STATE =====
 let currentTab = 'jual-sebagian';
 
 function setTab(tab) {
@@ -991,7 +628,6 @@ function updateUnrealized() {
   badge.textContent = (isP ? '▲ ' : '▼ ') + fmt(Math.abs(pl)) + ' (' + (isP ? '+' : '-') + Math.abs(pct).toFixed(1) + '%)';
 }
 
-// ===== HELPERS =====
 function fmt(n) {
   if (n >= 1e9) return 'Rp ' + (n / 1e9).toFixed(2).replace('.', ',') + ' M';
   if (n >= 1e6) return 'Rp ' + (n / 1e6).toFixed(1).replace('.', ',') + ' jt';
@@ -1016,20 +652,17 @@ function makeBar(name, val, max, color) {
   </div>`;
 }
 
-// ===== SIMULATE =====
 function simulate() {
   const now = parseFloat(document.getElementById('harga_sekarang').value);
   const avgH = parseFloat(document.getElementById('harga_avg').value);
   const totalLot = parseInt(document.getElementById('total_lot').value);
   if (!now || !avgH || !totalLot) { alert('Lengkapi dulu: harga saat ini, harga rata-rata beli, dan jumlah lot ya!'); return; }
-
   const nama = document.getElementById('nama').value.trim() || 'Saham';
   const totalLembar = totalLot * 100;
   const modal = avgH * totalLembar;
   const nilaiNow = now * totalLembar;
   const plUnreal = nilaiNow - modal;
   const pctPL = ((now - avgH) / avgH * 100);
-
   const grid = document.getElementById('metrics-grid');
   const vis = document.getElementById('vis-bars');
   const pill = document.getElementById('result-pill');
@@ -1041,7 +674,6 @@ function simulate() {
     const jualLot = currentTab === 'jual-semua' ? totalLot : (parseInt(document.getElementById('jual_lot').value) || 0);
     if (jualLot <= 0) { alert('Masukkan jumlah lot yang ingin dijual.'); return; }
     if (jualLot > totalLot) { alert('Jumlah lot jual tidak boleh melebihi lot yang kamu punya (' + totalLot + ' lot).'); return; }
-
     const jualLembar = jualLot * 100;
     const sisaLot = totalLot - jualLot;
     const sisaLembar = sisaLot * 100;
@@ -1050,33 +682,27 @@ function simulate() {
     const nilaiSisa = now * sisaLembar;
     const isP = plReal >= 0;
     const pctTx = ((now - avgH) / avgH * 100);
-
     title.textContent = 'Hasil Simulasi — ' + nama;
     pill.textContent = currentTab === 'jual-semua' ? 'Jual Semua' : 'Jual Sebagian';
     pill.className = 'result-pill pill-jual';
-
     grid.innerHTML =
       makeMetric('P/L Direalisasikan', (isP ? '+' : '') + fmt(plReal), isP ? 'positive' : 'negative', (isP ? '+' : '') + pctTx.toFixed(1) + '% dari avg') +
       makeMetric('Nilai Penjualan', fmt(nilaiJual), '', jualLot + ' lot × ' + fmtN(now)) +
       makeMetric('Sisa Lot', fmtN(sisaLot) + ' lot', '', sisaLot > 0 ? (sisaLot * 100) + ' lembar' : '—') +
       makeMetric('Nilai Sisa Porto', fmt(nilaiSisa), '', sisaLot > 0 ? 'harga avg tetap: ' + fmt(avgH) : '—');
-
     const maxB = Math.max(modal, nilaiJual, nilaiSisa, 1);
     vis.innerHTML =
       makeBar('Modal beli', modal, maxB, '#8c8680') +
       makeBar('Hasil jual', nilaiJual, maxB, isP ? 'var(--accent)' : 'var(--red)') +
       (sisaLot > 0 ? makeBar('Sisa porto', nilaiSisa, maxB, 'var(--blue)') : '');
-
     insight.className = 'insight' + (isP ? '' : ' red');
     insight.innerHTML = isP
       ? `Bagus! Kamu ${currentTab === 'jual-semua' ? 'menutup seluruh posisi' : 'memangkas ' + jualLot + ' lot'} dengan keuntungan <strong>${fmt(plReal)}</strong> (${pctTx.toFixed(1)}%). ${sisaLot > 0 ? 'Sisa ' + sisaLot + ' lot masih bisa tumbuh.' : 'Semua modal sudah kembali plus profit.'}`
       : `Kamu merealisasikan kerugian <strong>${fmt(Math.abs(plReal))}</strong> (${Math.abs(pctTx).toFixed(1)}%). ${sisaLot > 0 ? 'Pertimbangkan: apakah sisa ' + sisaLot + ' lot masih punya potensi rebound?' : 'Posisi sudah ditutup. Modal bisa dialokasikan ulang.'}`;
-
   } else if (currentTab === 'average') {
     const hargaBaru = parseFloat(document.getElementById('harga_avg_down').value);
     const lotBaru = parseInt(document.getElementById('lot_avg_down').value);
     if (!hargaBaru || !lotBaru) { alert('Lengkapi harga beli tambahan dan jumlah lot yang akan dibeli.'); return; }
-
     const lembarBaru = lotBaru * 100;
     const totalLotBaru = totalLot + lotBaru;
     const totalLembarBaru = totalLotBaru * 100;
@@ -1088,17 +714,14 @@ function simulate() {
     const isP = plBaru >= 0;
     const turunPct = ((avgBaru - avgH) / avgH * 100);
     const hasilPct = ((now - avgBaru) / avgBaru * 100);
-
     title.textContent = 'Hasil Simulasi — ' + nama;
     pill.textContent = 'Average Down';
     pill.className = 'result-pill pill-avg';
-
     grid.innerHTML =
       makeMetric('Average Baru', fmt(avgBaru), 'neutral', 'dari ' + fmt(avgH) + ' (' + turunPct.toFixed(1) + '%)') +
       makeMetric('Total Lot Baru', fmtN(totalLotBaru) + ' lot', '', totalLotBaru * 100 + ' lembar') +
       makeMetric('Harga Break Even', fmt(avgBaru), '', 'harus naik ke sini untuk balik modal') +
       makeMetric('P/L Saat Ini', (isP ? '+' : '') + fmt(plBaru), isP ? 'positive' : 'negative', (isP ? '+' : '') + hasilPct.toFixed(1) + '% dari avg baru');
-
     const maxB = Math.max(totalModal, nilaiSekarangBaru, avgH * 100, avgBaru * 100, 1);
     vis.innerHTML =
       '<div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;font-weight:600;">Harga Average</div>' +
@@ -1109,33 +732,27 @@ function simulate() {
       '<div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;font-weight:600;">Nilai Porto</div>' +
       makeBar('Total modal', totalModal, Math.max(totalModal, nilaiSekarangBaru) * 1.1, '#8c8680') +
       makeBar('Nilai kini', nilaiSekarangBaru, Math.max(totalModal, nilaiSekarangBaru) * 1.1, isP ? 'var(--accent)' : 'var(--red)');
-
     insight.className = 'insight';
     insight.innerHTML = `Average beli turun dari <strong>${fmt(avgH)}</strong> ke <strong>${fmt(avgBaru)}</strong> (${Math.abs(turunPct).toFixed(1)}% lebih rendah). Kamu perlu modal tambahan <strong>${fmt(modalBaru)}</strong> untuk membeli ${lotBaru} lot lagi. Break even ada di harga <strong>${fmt(avgBaru)}</strong>.`;
-
   } else {
     const isP = plUnreal >= 0;
     title.textContent = 'Kondisi Posisi — ' + nama;
     pill.textContent = 'Tahan Dulu';
     pill.className = 'result-pill pill-hold';
-
     grid.innerHTML =
       makeMetric('Nilai Porto Saat Ini', fmt(nilaiNow), '', totalLot + ' lot × ' + fmtN(now)) +
       makeMetric('Unrealized P/L', (isP ? '+' : '') + fmt(plUnreal), isP ? 'positive' : 'negative', (isP ? '+' : '') + pctPL.toFixed(1) + '% dari modal') +
       makeMetric('Total Modal Beli', fmt(modal), '', fmtN(totalLot) + ' lot × ' + fmt(avgH)) +
       makeMetric('Harga Break Even', fmt(avgH), 'neutral', 'harga rata-rata belimu');
-
     const maxB = Math.max(modal, nilaiNow, 1);
     vis.innerHTML =
       makeBar('Modal beli', modal, maxB * 1.05, '#8c8680') +
       makeBar('Nilai kini', nilaiNow, maxB * 1.05, isP ? 'var(--accent)' : 'var(--red)');
-
     insight.className = 'insight amber';
     insight.innerHTML = isP
       ? `Posisimu saat ini <strong>untung ${fmt(plUnreal)} (${pctPL.toFixed(1)}%)</strong>. Kalau tahan, pastikan ada alasan fundamental yang kuat. Jangan biarkan profit berubah jadi rugi tanpa strategi.`
       : `Posisimu saat ini <strong>rugi ${fmt(Math.abs(plUnreal))} (${Math.abs(pctPL).toFixed(1)}%)</strong>. Pertimbangkan: apakah ada katalis untuk rebound, atau lebih baik cut loss dan alokasikan modal ke saham lain?`;
   }
-
   results.className = 'results-section show';
   setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
 }
@@ -1152,17 +769,15 @@ function resetAll() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== ARA / ARB CALCULATOR =====
+// ===== ARA / ARB =====
+let currentTier = 1;
 
-let currentTier = 1; // default
-
-// BEI ARA/ARB tiers
 const TIERS = {
   1: { label: 'Fraksi I (<200)', ara: 0.35, arb: 0.35 },
   2: { label: 'Fraksi II (200–5000)', ara: 0.25, arb: 0.25 },
   3: { label: 'Fraksi III (>5000)', ara: 0.20, arb: 0.20 },
-  'ipo': { label: 'IPO Hari 1', ara: null, arb: 0.35 }, // ARA tak terbatas
-  'auto': { label: 'Auto', ara: null, arb: null }, // detect from price
+  'ipo': { label: 'IPO Hari 1', ara: null, arb: 0.35 },
+  'auto': { label: 'Auto', ara: null, arb: null },
   'custom': { label: 'Custom', ara: null, arb: null },
 };
 
@@ -1185,26 +800,18 @@ function setTier(tier, el) {
   currentTier = tier;
   document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-
-  // Show custom input
   const customWrap = document.getElementById('custom-pct-wrap');
   customWrap.className = 'form-extra' + (tier === 'custom' ? ' show' : '');
-
-  // Show IPO extra fields
   const ipoExtra = document.getElementById('ipo-extra');
   ipoExtra.className = 'form-extra' + (tier === 'ipo' ? ' show' : '');
-
-  // Reset results
+  // Show/hide lot fields (hide for IPO mode, IPO has its own)
+  const lotFieldsWrap = document.getElementById('lot-fields-wrap');
+  lotFieldsWrap.className = 'form-extra' + (tier !== 'ipo' ? ' show' : '');
   document.getElementById('ara-results').className = 'results-section';
 }
 
 function araAutoTier() {
   if (currentTier !== 'auto') return;
-  // auto-highlight which tier would apply
-  const h = parseFloat(document.getElementById('ara_harga').value);
-  if (!h) return;
-  const t = getTierByPrice(h);
-  // just visual hint — handled in calcARA
 }
 
 function calcARA() {
@@ -1218,25 +825,23 @@ function calcARA() {
   const tierInfo = getEffectivePct(harga);
   const isIPO = currentTier === 'ipo';
 
-  // Build day-by-day table
-  let rows = [];
-  let hargaAra = harga;
-  let hargaArb = harga;
+  // Lot data (non-IPO)
+  const hargaBeli = parseFloat(document.getElementById('ara_harga_beli').value);
+  const lotUser = parseInt(document.getElementById('ara_lot').value);
+  const hasLotData = !isIPO && hargaBeli > 0 && lotUser > 0;
+  const lembarUser = hasLotData ? lotUser * 100 : 0;
+  const modalUser = hasLotData ? hargaBeli * lembarUser : 0;
 
+  let rows = [];
   for (let d = 1; d <= hari; d++) {
     let araRate, arbRate;
-
     if (isIPO && d === 1) {
-      // Hari 1 IPO: no ARA limit, ARB based on tier 1/2/3
       const baseTier = TIERS[getTierByPrice(harga)];
-      araRate = null; // unlimited
+      araRate = null;
       arbRate = baseTier.arb;
     } else {
-      // After hari 1 or not IPO mode
-      const prevPrice = d === 1 ? harga : rows[d - 2].araPrice;
-      const prevPriceArb = d === 1 ? harga : rows[d - 2].arbPrice;
       if (currentTier === 'auto') {
-        const t1 = TIERS[getTierByPrice(d === 1 ? harga : rows[d-2].araPrice)];
+        const t1 = TIERS[getTierByPrice(d === 1 ? harga : rows[d-2].araPrice || harga)];
         araRate = t1.ara;
         const t2 = TIERS[getTierByPrice(d === 1 ? harga : rows[d-2].arbPrice)];
         arbRate = t2.arb;
@@ -1248,72 +853,56 @@ function calcARA() {
         arbRate = tierInfo.arb;
       }
     }
-
-    const prevAra = d === 1 ? harga : rows[d - 2].araPrice;
-    const prevArb = d === 1 ? harga : rows[d - 2].arbPrice;
-
+    const prevAra = d === 1 ? harga : (rows[d-2].araPrice || harga);
+    const prevArb = d === 1 ? harga : rows[d-2].arbPrice;
     const araPrice = araRate === null ? null : Math.round(prevAra * (1 + araRate));
     const arbPrice = Math.round(prevArb * (1 - arbRate));
-    const araGain = araPrice !== null ? araPrice - harga : null;
-    const arbLoss = arbPrice - harga;
     const araPct = araPrice !== null ? ((araPrice - harga) / harga * 100) : null;
     const arbPct = ((arbPrice - harga) / harga * 100);
 
-    rows.push({ day: d, araPrice, arbPrice, araGain, arbLoss, araPct, arbPct, araRate, arbRate });
+    // Profit/loss for user lot
+    let profitAra = null, profitArb = null, pctAra = null, pctArb = null;
+    if (hasLotData) {
+      if (araPrice !== null) {
+        profitAra = araPrice * lembarUser - modalUser;
+        pctAra = (profitAra / modalUser * 100);
+      }
+      profitArb = arbPrice * lembarUser - modalUser;
+      pctArb = (profitArb / modalUser * 100);
+    }
+
+    rows.push({ day: d, araPrice, arbPrice, araPct, arbPct, araRate, arbRate, profitAra, profitArb, pctAra, pctArb });
   }
 
-  // Render title & pill
+  // Title & pill
   const titleEl = document.getElementById('ara-result-title');
   const pillEl = document.getElementById('ara-result-pill');
   titleEl.textContent = `Proyeksi ARA/ARB — ${nama}`;
   pillEl.textContent = isIPO ? 'Mode IPO' : (currentTier === 'auto' ? 'Auto Tier' : currentTier === 'custom' ? 'Custom %' : 'Fraksi ' + currentTier);
   pillEl.className = 'result-pill ' + (isIPO ? 'pill-ipo' : 'pill-ara');
 
-  // Badge row (day 1 batas)
+  // Badge row
   const badgeRow = document.getElementById('ara-badge-row');
   const d1 = rows[0];
   badgeRow.innerHTML =
     (d1.araPrice !== null
-      ? `<div class="price-badge badge-ara">
-          <div class="pb-label">▲ ARA Hari 1</div>
-          <div class="pb-val">${fmtH(d1.araPrice)}</div>
-          <div class="pb-pct">+${d1.araRate ? (d1.araRate * 100).toFixed(0) : '?'}% dari acuan</div>
-        </div>`
-      : `<div class="price-badge badge-ara" style="background:var(--accent-bg);border:1px solid rgba(29,110,82,0.2)">
-          <div class="pb-label" style="color:var(--accent-text)">▲ ARA Hari 1</div>
-          <div class="pb-val" style="color:var(--accent);font-size:15px">Tidak Terbatas</div>
-          <div class="pb-pct" style="color:var(--accent-text)">IPO — no upper limit</div>
-        </div>`) +
-    `<div class="price-badge badge-cur">
-      <div class="pb-label">⦿ Harga Acuan</div>
-      <div class="pb-val">${fmtH(harga)}</div>
-      <div class="pb-pct">Referensi hari ini</div>
-    </div>
-    <div class="price-badge badge-arb">
-      <div class="pb-label">▼ ARB Hari 1</div>
-      <div class="pb-val">${fmtH(d1.arbPrice)}</div>
-      <div class="pb-pct">−${d1.arbRate ? (d1.arbRate * 100).toFixed(0) : '?'}% dari acuan</div>
-    </div>`;
+      ? `<div class="price-badge badge-ara"><div class="pb-label">▲ ARA Hari 1</div><div class="pb-val">${fmtH(d1.araPrice)}</div><div class="pb-pct">+${d1.araRate ? (d1.araRate*100).toFixed(0) : '?'}% dari acuan</div></div>`
+      : `<div class="price-badge badge-ara"><div class="pb-label" style="color:var(--accent-text)">▲ ARA Hari 1</div><div class="pb-val" style="color:var(--accent);font-size:15px">Tidak Terbatas</div><div class="pb-pct" style="color:var(--accent-text)">IPO — no upper limit</div></div>`) +
+    `<div class="price-badge badge-cur"><div class="pb-label">⦿ Harga Acuan</div><div class="pb-val">${fmtH(harga)}</div><div class="pb-pct">Referensi hari ini</div></div>
+    <div class="price-badge badge-arb"><div class="pb-label">▼ ARB Hari 1</div><div class="pb-val">${fmtH(d1.arbPrice)}</div><div class="pb-pct">−${d1.arbRate ? (d1.arbRate*100).toFixed(0) : '?'}% dari acuan</div></div>`;
 
-  // IPO profit calculator
+  // IPO profit metrics
   const ipoWrap = document.getElementById('ipo-metrics-wrap');
   const ipoMetrics = document.getElementById('ipo-metrics');
   if (isIPO) {
     const hargaDapat = parseFloat(document.getElementById('ipo_harga_dapat').value);
     const lotDapat = parseInt(document.getElementById('ipo_lot').value);
     const targetHari = Math.min(parseInt(document.getElementById('ipo_target_hari').value) || 1, hari);
-
     if (hargaDapat && lotDapat) {
       const targetRow = rows[targetHari - 1];
-      // For IPO day 1, ARA is unlimited — show ARB side for risk
-      // For profit, use ARA (best case) — if unlimited, we can't compute exact, show ARB risk only
       const lembar = lotDapat * 100;
       const modal = hargaDapat * lembar;
-
-      let profitNote = '—';
-      let profitVal = '—';
-      let profitClass = '';
-
+      let profitNote = '—', profitVal = '—', profitClass = '';
       if (targetRow.araPrice !== null) {
         const nilaiJual = targetRow.araPrice * lembar;
         const profit = nilaiJual - modal;
@@ -1322,17 +911,14 @@ function calcARA() {
         profitNote = (profit >= 0 ? '+' : '') + pctProfit.toFixed(1) + '% dari modal';
         profitClass = profit >= 0 ? 'positive' : 'negative';
       }
-
       const nilaiJualARB = targetRow.arbPrice * lembar;
       const rugiARB = nilaiJualARB - modal;
       const pctARB = (rugiARB / modal * 100);
-
       ipoMetrics.innerHTML =
         makeMetric('Modal IPO', fmt(modal), '', lotDapat + ' lot × ' + fmtH(hargaDapat)) +
-        makeMetric(targetRow.araPrice !== null ? `Profit Jual Hari ${targetHari} (ARA)` : `ARA Hari 1`, profitVal, profitClass, profitNote) +
+        makeMetric(targetRow.araPrice !== null ? `Profit Jual Hari ${targetHari} (ARA)` : 'ARA Hari 1', profitVal, profitClass, profitNote) +
         makeMetric(`Risiko ARB Hari ${targetHari}`, fmt(Math.abs(rugiARB)), 'negative', pctARB.toFixed(1) + '% dari modal') +
         makeMetric('Break Even Lot', fmtH(hargaDapat), 'neutral', 'harga perolehan IPO');
-
       ipoWrap.style.display = 'block';
     } else {
       ipoWrap.style.display = 'none';
@@ -1341,9 +927,8 @@ function calcARA() {
     ipoWrap.style.display = 'none';
   }
 
-  // Table
+  // Main ARA table — add P/L columns if lot data available
   const table = document.getElementById('ara-table');
-  const isUnlimitedIPO = isIPO;
   let tableHTML = `<thead><tr>
     <th>Hari</th>
     <th>Batas ARA</th>
@@ -1351,12 +936,10 @@ function calcARA() {
     <th>Batas ARB</th>
     <th>% Akum</th>
   </tr></thead><tbody>`;
-
   rows.forEach((r, i) => {
-    const isHighlight = i % 2 === 1;
     const araAkum = r.araPrice !== null ? ((r.araPrice - harga) / harga * 100) : null;
     const arbAkum = ((r.arbPrice - harga) / harga * 100);
-    tableHTML += `<tr class="${isHighlight ? 'highlight-row' : ''}">
+    tableHTML += `<tr class="${i%2===1?'highlight-row':''}">
       <td class="day-col">H+${r.day}</td>
       <td class="up-val">${r.araPrice !== null ? fmtH(r.araPrice) : '∞'}</td>
       <td class="up-val">${araAkum !== null ? '+' + araAkum.toFixed(1) + '%' : '+∞%'}</td>
@@ -1367,17 +950,61 @@ function calcARA() {
   tableHTML += '</tbody>';
   table.innerHTML = tableHTML;
 
+  // NEW: Lot profit table
+  const lotSection = document.getElementById('lot-profit-section');
+  const lotProfitTable = document.getElementById('lot-profit-table');
+  if (hasLotData && !isIPO) {
+    let lotHTML = `<thead><tr>
+      <th>Hari</th>
+      <th>Harga ARA</th>
+      <th>P/L di ARA</th>
+      <th>Harga ARB</th>
+      <th>P/L di ARB</th>
+    </tr></thead><tbody>`;
+    rows.forEach((r, i) => {
+      const araPlStr = r.profitAra !== null
+        ? `<span class="${r.profitAra >= 0 ? 'profit-pos' : 'profit-neg'}">${r.profitAra >= 0 ? '+' : ''}${fmt(r.profitAra)}<br><span style="font-size:10.5px;font-weight:400;">(${r.pctAra >= 0 ? '+' : ''}${r.pctAra.toFixed(1)}%)</span></span>`
+        : '<span style="color:var(--text3)">∞</span>';
+      const arbPlStr = `<span class="${r.profitArb >= 0 ? 'profit-pos' : 'profit-neg'}">${r.profitArb >= 0 ? '+' : ''}${fmt(r.profitArb)}<br><span style="font-size:10.5px;font-weight:400;">(${r.pctArb >= 0 ? '+' : ''}${r.pctArb.toFixed(1)}%)</span></span>`;
+      lotHTML += `<tr class="${i%2===1?'highlight-row':''}">
+        <td class="day-label">H+${r.day}</td>
+        <td class="price-up">${r.araPrice !== null ? fmtH(r.araPrice) : '∞'}</td>
+        <td>${araPlStr}</td>
+        <td class="price-down">${fmtH(r.arbPrice)}</td>
+        <td>${arbPlStr}</td>
+      </tr>`;
+    });
+    lotHTML += '</tbody>';
+    lotProfitTable.innerHTML = lotHTML;
+
+    // Summary metrics above table
+    const lastRow = rows[hari - 1];
+    const ipoMetricsWrap = document.getElementById('ipo-metrics-wrap');
+
+    // Show lot summary in ipo-metrics slot (reuse it)
+    const maxAraProfit = rows[hari-1].profitAra;
+    const maxArbLoss = rows[hari-1].profitArb;
+    ipoMetrics.innerHTML =
+      makeMetric('Modal Kamu', fmt(modalUser), '', lotUser + ' lot × ' + fmtH(hargaBeli)) +
+      makeMetric('Harga Beli', fmtH(hargaBeli), 'neutral', 'avg belimu') +
+      (maxAraProfit !== null ? makeMetric(`Maks Profit (${hari}x ARA)`, (maxAraProfit>=0?'+':'')+fmt(maxAraProfit), maxAraProfit>=0?'positive':'negative', (maxAraProfit>=0?'+':'')+lastRow.pctAra.toFixed(1)+'% dari modal') : '') +
+      makeMetric(`Maks Loss (${hari}x ARB)`, fmt(Math.abs(maxArbLoss)), 'negative', lastRow.pctArb.toFixed(1)+'% dari modal');
+    ipoMetricsWrap.style.display = 'block';
+
+    lotSection.style.display = 'block';
+  } else {
+    lotSection.style.display = 'none';
+  }
+
   // Insight
   const insight = document.getElementById('ara-insight');
   const lastRow = rows[hari - 1];
-  const maxAra = lastRow.araPrice;
-  const maxArb = lastRow.arbPrice;
   if (isIPO) {
-    insight.innerHTML = `Hari pertama IPO tidak punya batas ARA — harga bisa naik sepanjang ada pembeli. Namun ARB tetap berlaku: setelah ${hari} hari full ARB berturut-turut, harga bisa turun ke sekitar <strong>${fmtH(maxArb)}</strong> (${lastRow.arbPct.toFixed(1)}% dari IPO). Selalu pasang strategi exit!`;
-  } else if (maxAra !== null) {
-    insight.innerHTML = `Jika saham terus ARA selama ${hari} hari berturut-turut, harga bisa mencapai <strong>${fmtH(maxAra)}</strong> (+${lastRow.araPct.toFixed(1)}%). Jika terus ARB, harga bisa turun ke <strong>${fmtH(maxArb)}</strong> (${lastRow.arbPct.toFixed(1)}%). Ini adalah skenario <em>ekstrem</em> — realistiknya harga akan berfluktuasi di antara kedua batas ini setiap harinya.`;
+    insight.innerHTML = `Hari pertama IPO tidak punya batas ARA — harga bisa naik sepanjang ada pembeli. Namun ARB tetap berlaku: setelah ${hari} hari full ARB berturut-turut, harga bisa turun ke sekitar <strong>${fmtH(lastRow.arbPrice)}</strong> (${lastRow.arbPct.toFixed(1)}% dari IPO). Selalu pasang strategi exit!`;
+  } else if (lastRow.araPrice !== null) {
+    insight.innerHTML = `Jika saham terus ARA selama ${hari} hari, harga bisa mencapai <strong>${fmtH(lastRow.araPrice)}</strong> (+${lastRow.araPct.toFixed(1)}%). Jika terus ARB, harga bisa turun ke <strong>${fmtH(lastRow.arbPrice)}</strong> (${lastRow.arbPct.toFixed(1)}%). ${hasLotData ? 'Dengan ' + lotUser + ' lot yang kamu pegang, potensi profit/loss-nya sudah tertera di tabel di atas.' : 'Isi field "lot kamu" untuk melihat estimasi profit/loss.'}`;
   } else {
-    insight.innerHTML = `Proyeksi dihitung berdasarkan batas ARA/ARB setiap hari. Harga aktual bisa berbeda tergantung supply/demand dan aksi korporasi.`;
+    insight.innerHTML = 'Proyeksi dihitung berdasarkan batas ARA/ARB setiap hari. Harga aktual bisa berbeda tergantung supply/demand dan aksi korporasi.';
   }
 
   document.getElementById('ara-results').className = 'results-section show';
@@ -1385,7 +1012,7 @@ function calcARA() {
 }
 
 function resetARA() {
-  ['ara_nama','ara_harga','ara_hari','ipo_harga_dapat','ipo_lot','ipo_target_hari'].forEach(id => {
+  ['ara_nama','ara_harga','ara_hari','ipo_harga_dapat','ipo_lot','ipo_target_hari','ara_harga_beli','ara_lot'].forEach(id => {
     const el = document.getElementById(id);
     if (el) { el.value = id === 'ara_hari' ? '5' : id === 'ipo_target_hari' ? '1' : ''; }
   });
